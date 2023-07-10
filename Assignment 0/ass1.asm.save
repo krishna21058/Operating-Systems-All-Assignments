@@ -1,0 +1,14 @@
+section .data 
+	msg : db "Hello World !" ,0x0a, O 
+section .text 
+	global main 
+	extern printf 
+main : 
+	push rbp 
+	mov rbp , rsp 
+[msg] parameter 1 for printf 
+	xor eax , eax; 0 f loating point parameters 
+	call printf 
+	xor eax , eax return 0 
+	pop rbp 
+	ret
